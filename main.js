@@ -9,6 +9,7 @@ const successAudio = document.getElementById("success");
 const failAudio = document.getElementById("fail");
 const winAudio = document.getElementById("win");
 let orderRange = [...Array(blocks.length).keys()];
+let bestScore = Infinity;
 
 
 function flipBlock (selectedBlock){
@@ -75,7 +76,6 @@ function isMatch(firstImage, secondImage){
 }
 
 function wonGame() {
-    
     const div = document.createElement("div");
 
     const span = document.createElement("span");
@@ -84,9 +84,15 @@ function wonGame() {
 
     span.className = "btn"
 
-    span.innerHTML = "Play Again"
+    span.innerHTML = "Play Again";
 
-    div.innerHTML = `Congratulations! You won the game with ${wrongTries.innerHTML} wrong tries:)`
+    let currentTries = parseInt(wrongTries.innerHTML);
+
+    if (currentTries < bestScore){
+        bestScore = currentTries;
+    }
+
+    div.innerHTML = `Congratulations! You won the game with ${wrongTries.innerHTML} wrong tries :) Best score: ${bestScore}`
 
     div.appendChild(span);
     span.addEventListener("click", resetGame);
