@@ -1,0 +1,166 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: arial, Tahoma, sans-serif;
+    background-image: url(./background.jpg);
+    background-size: cover;
+    background-position: center,center;
+    background-position-y: 1030px;
+}
+
+
+.cont-btns{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-image: url(./background.jpg);
+    background-size: cover;
+    background-position-y: 1030px;
+}
+
+.cont-btns span{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #190e88;
+    color: #f26e22;
+    padding: 20px 28px;
+    border-radius: 10%;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cont-btns p{
+    position: absolute;
+    left: 50%;
+    top: 56%;
+    transform: translate(-50%, -50%);
+    color: #190e88;
+    background: #f26e22;
+    border-radius: 8%;
+    height: 70px;
+    width: 500px;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.info-cont{
+    width: 1080px;
+    margin: 20px auto 0;
+    background-color: #f6f6f6;
+    padding: 20px;
+    font-size: 24px;
+    overflow: hidden;
+    border: 2px solid #2196f3;
+}
+
+.info-cont .name{
+    float: left;
+    width: 50%;
+}
+
+.info-cont .wrong-tries{
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+
+.block-cont{
+    display: flex;
+    width: 1100px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+.block-cont.no-clicking{
+    pointer-events: none;
+}
+
+
+.image-block{
+    height: 200px;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    flex: 1 0 200px;
+    margin: 0 10px 20px;
+}
+
+.image-block .front{
+    background-color: #333;
+    line-height: 200px;
+    box-shadow: -5px 4px 15px 1px #694300
+}
+
+.image-block .front::before{
+    content: "?";
+    color: white;
+    font-size: 148px;
+    font-weight: bold;
+}
+
+.image-block .back{
+    background-color: #607d8b;
+    transform: rotateY(180deg);
+}
+
+.image-block .back i {
+    width: 140px;
+    height: 140px;
+    margin-top: 30px;
+    font-size: 150px;
+}
+
+.image-block .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    border: 5px solid #2196F3;
+}
+
+.image-block.flipped,.matched{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+
+.won,.lost{
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+    padding: 100px;
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 10%;
+}
+
+.btn{
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+    background-color: #190e88;
+    color: #f26e22;
+    padding: 20px 28px;
+    border-radius: 10%;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+}
